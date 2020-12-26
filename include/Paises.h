@@ -1,8 +1,11 @@
 #ifndef __PAISES__
 #define __PAISES__
 #include "Pais.h"
+#include "Punto.h"
 #include <set>
+
 using namespace std;
+
 class Paises{
   private:
     set<Pais> datos;
@@ -104,7 +107,7 @@ class Paises{
 	    it.p=i;
 	    return it;
 	}
-	iterator find(const Punto &p){
+	iterator find(const PuntoE &p){
 	    iterator it;
 	    set<Pais>::iterator i;
 	    for (i=datos.begin(); i!=datos.end() && !((*i)==p);++i);

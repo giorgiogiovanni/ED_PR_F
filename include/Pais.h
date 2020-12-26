@@ -3,13 +3,13 @@
 #include "Punto.h"
 class Pais{
   private:
-    Punto p;
+    PuntoE p;
     string pais;
     string bandera;
     
   public:
     Pais(){}
-    Punto GetPunto()const { return p;}
+    PuntoE GetPunto()const { return p;}
     string GetPais()const{ return pais;}
     string GetBandera()const{ return bandera;}
     
@@ -19,7 +19,7 @@ class Pais{
     bool operator==(const Pais &P)const{
 	return pais==P.pais;
     }
-     bool operator==(const Punto &P)const{
+     bool operator==(const PuntoE &P)const{
 	return p==P;
     }
     friend istream & operator>>(istream & is, Pais & P){
@@ -27,7 +27,7 @@ class Pais{
 	
 	is>>lat>>lng>>P.pais>>P.bandera;
 	
-	P.p=Punto(lat,lng,"");
+	P.p=PuntoE(lat,lng);
 	return is;
     }
     friend ostream & operator<<(ostream & os, const Pais &P){
