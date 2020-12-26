@@ -1,5 +1,3 @@
-# README.md
-
 ## PRACTICA FINAL ESTRUCTURA DE DATOS
 
 Autores: 
