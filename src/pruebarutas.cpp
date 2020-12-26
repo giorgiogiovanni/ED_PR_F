@@ -1,5 +1,5 @@
 #include "Ruta.h"
-#include "almacen_rutas.h"
+#include "AlmacenRutas.h"
 #include <iostream>
 #include <string>
 #include <fstream>

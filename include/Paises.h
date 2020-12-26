@@ -1,8 +1,21 @@
+/**
+ * @file    Paises.h
+ * @author  Dpto. Ciencias de la Computacion e I.A.
+ * @brief   Archivo con cabeceras para la clase Paises
+ * 
+ */
+
 #ifndef __PAISES__
 #define __PAISES__
+
 #include "Pais.h"
 #include <set>
+
 using namespace std;
+
+/**
+ * @brief	clase para T.D.A. Paises
+ */
 class Paises{
   private:
     set<Pais> datos;
@@ -15,8 +28,9 @@ class Paises{
 	  datos.erase(P);
       }
       
-      class const_iterator;
+    class const_iterator;
 	class iterator{
+		
 	private:
 	    set<Pais>::iterator p;
 	public:
@@ -104,7 +118,7 @@ class Paises{
 	    it.p=i;
 	    return it;
 	}
-	iterator find(const Punto &p){
+	iterator find(const PuntoE &p){
 	    iterator it;
 	    set<Pais>::iterator i;
 	    for (i=datos.begin(); i!=datos.end() && !((*i)==p);++i);
