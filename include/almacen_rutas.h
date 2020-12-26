@@ -10,9 +10,10 @@
 #define __ALMACEN_RUTAS_H__
 
 #define PASSWORD "#Rutas"
+
 #include <string>
 #include <iostream>
-#include <list>
+#include <map>
 #include "Ruta.h"
 
 using namespace std;
@@ -21,7 +22,7 @@ using namespace std;
 class Almacen_Rutas {
     private:
         /// Dato miembro @p rutas con una lista STL de RutaAerea
-        list<RutaAerea> rutas;
+        map<string,RutaAerea> rutas;
 
         /**
          * @brief   Metodo privado para eliminar todo;
@@ -31,27 +32,67 @@ class Almacen_Rutas {
                 rutas.clear();
         }
 
-    public:
-        Almacen_Rutas() { rutas = list<RutaAerea>(); }
-        Almacen_Rutas(const Almacen_Rutas &otras);
-        // ~Almacen_Rutas();
+        /**
+         * @brief   Metodo privado para copiar los datos de un map
+         */
+        void Copiar(const Almacen_Rutas &otro) {
+            Delete();
+            rutas.insert(otro.rutas.begin(),otro.rutas.end());
+        }
 
+    public:
+        /**
+         * @brief   Constructor por defecto
+         */
+        Almacen_Rutas() { rutas = map<string,RutaAerea>(); }
+
+        /**
+         * @brief   Constructor de copia
+         * @param   otras   otro almacen desde el que copiar
+         */
+        Almacen_Rutas(const Almacen_Rutas &otras) {
+            Copiar(otras);
+        }
+        
+        /**
+         * @brief   Metodo publico para limpiar el almacen
+         */
+        void clear() { Delete(); }
+
+        /**
+         * @brief   Metodo para consultar el tamaño del almacen
+         * @return  valor @c int con el numero de rutas almacenadas
+         */
         int size() { return rutas.size(); }
 
-        void addRuta(const RutaAerea &r) {
-            rutas.push_back(r);
+        /**
+         * @brief   Metodo para almacenar una nueva ruta aerea
+         */
+        bool addRuta(const RutaAerea &r) {
+            pair<map<string,RutaAerea>::iterator,bool> res;
+            // emplace devuelve un pair con un iterador apuntando al
+            // elemento insertado y un bool si ha sido posible insertarlo
+            pair<string,RutaAerea> elem(r.getName(),r);
+            res = rutas.emplace(elem);
+            return res.second;
         }
 
         RutaAerea GetRuta(const string &cod) const {
-
+            // find devuelve un puntero al pair donde second es 
+            // la ruta aerea
+            return (rutas.find(cod)->second);
         }
+
+    /**************************************************************************/
+    // CLASES ITERADORAS
+    /**************************************************************************/
 
         /**
          * Clase Iteradora de Almacen_Rutas
          */
         class iterator {
         private:
-            list<RutaAerea>::iterator it;
+            map<string,RutaAerea>::iterator it;
         public:
             iterator() {};
             
@@ -65,7 +106,7 @@ class Almacen_Rutas {
                 return *this;
             }
 
-            const RutaAerea &operator*() {
+            const pair<const string,RutaAerea> &operator*() {
                 return *it;
             }
             
@@ -82,7 +123,7 @@ class Almacen_Rutas {
 
         class const_iterator {
         private:
-            list<RutaAerea>::const_iterator it;
+            map<string,RutaAerea>::const_iterator it;
         public:
             const_iterator() {};
 
@@ -96,7 +137,7 @@ class Almacen_Rutas {
                 return *this;
             }
 
-            const RutaAerea &operator*() {
+            const pair<const string,RutaAerea> &operator*() {
                 return *it;
             }
 
@@ -141,6 +182,7 @@ class Almacen_Rutas {
     friend istream &operator>> (istream &is, Almacen_Rutas &alm) {
         string a;
         RutaAerea temp;
+
         is >> a;
     cout << "Iniciado" << endl << "leido: " << a << endl;
         if (a != PASSWORD){
@@ -149,8 +191,7 @@ class Almacen_Rutas {
         else {
             while(is) {
                 is >> temp;
-                cout << "LEIDA RUTA:\t" << temp << endl;
-                alm.rutas.push_back(temp);
+                alm.addRuta(temp);
             }
         }
         return is;
@@ -160,7 +201,7 @@ class Almacen_Rutas {
         os << PASSWORD << endl;
         Almacen_Rutas::iterator it;
         for (it = alm.begin(); it!= alm.end(); ++it) {
-            os << (*it) << endl;
+            os << (*it).second << endl;
         }
 
         return os;
