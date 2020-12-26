@@ -190,6 +190,7 @@ int main(int argc, char *argv[])
       posj_ini = x;
       it_before = it;
    }
+   cout << endl << endl;
 
    string nsal = a + ".ppm";
    I.EscribirImagen(nsal.c_str());

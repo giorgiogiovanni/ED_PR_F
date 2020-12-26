@@ -39,12 +39,17 @@ class Pais{
 
     friend istream & operator>>(istream & is, Pais & P){
         double lat,lng;
-	
-	    is>>lat>>lng>>P.pais>>P.bandera;
+        string pais,bandera;
 
-        // P.p=PuntoE(lat,lng,"");
-        // Cambio para adaptar a nuestro constructor
-	    P.p=PuntoE(lat,lng);
+        // control para si estan todos los datos
+	    is>>lat>>lng>>pais>>bandera;
+
+        if(pais != "" && bandera != ""){
+            P.pais    = pais;
+            P.bandera = bandera;
+            P.p       = PuntoE(lat,lng);
+        }
+
 	    return is;
     }
     

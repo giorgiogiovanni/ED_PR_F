@@ -18,7 +18,7 @@ rutas:
 
 
 exe:
-	./bin/rutasaereas datos/paises.txt datos/imagenes/mapas/mapa1.ppm datos/imagenes/banderas/ datos/almacen_rutas.txt datos/imagenes/aviones/avion3.ppm datos/imagenes/aviones/mascara_avion3.pgm
+	./bin/rutasaereas datos/paises.txt datos/imagenes/mapas/mapa1.ppm datos/imagenes/banderas/ datos/almacen_rutas.txt datos/imagenes/aviones/avion1.ppm datos/imagenes/aviones/mascara_avion1.pgm
 
 # ************ Generación de documentación ******************
 documentacion:
