@@ -184,7 +184,6 @@ class Almacen_Rutas {
         RutaAerea temp;
 
         is >> a;
-    cout << "Iniciado" << endl << "leido: " << a << endl;
         if (a != PASSWORD){
             cerr << "Error en PASSWORD de archivo o entrada de datos" << endl;
         }

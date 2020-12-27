@@ -140,11 +140,10 @@ int main(int argc, char *argv[])
 
    Almacen_Rutas Ar;
    f.close();
-   cout << "voy a leer "<< argv[4] << endl;
    f.open(argv[4]);
    f >> Ar;
-   cout << "Las rutas: " << endl
-        << Ar;
+   cout << " -- Rutas Leidas y Almacenadas -- " << endl;
+   cout << "**********************************" <<endl;
    cout << "Dime el codigo de una ruta" << endl;
    string a;
    cin >> a;
