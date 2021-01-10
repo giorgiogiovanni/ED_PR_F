@@ -1,3 +1,9 @@
+/**
+ * @file    rutas_aereas.cpp
+ * @date    Dic-2020
+ * @author  Dpto. Ciencias de la Computacion e I.A.
+ */
+
 #include "imagen.h"
 #include "AlmacenRutas.h"
 #include "Paises.h"

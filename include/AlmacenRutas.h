@@ -21,7 +21,7 @@ using namespace std;
 
 class Almacen_Rutas {
     private:
-        /// Dato miembro @p rutas con una lista STL de RutaAerea
+        /// Dato miembro @p rutas con una map STL de RutaAerea
         map<string,RutaAerea> rutas;
 
         /**
@@ -178,6 +178,7 @@ class Almacen_Rutas {
 
     /**
      * @brief   Metodo Friend de lectura de almacen de rutas
+     *          [ Sobrecarga del operador >> ]
      */
     friend istream &operator>> (istream &is, Almacen_Rutas &alm) {
         string a;
@@ -196,6 +197,10 @@ class Almacen_Rutas {
         return is;
     };
 
+    /**
+     * @brief   Metodo Friend de escritura de almacen de rutas 
+     *          [ Sobrecarga del operador << ]
+     */
     friend ostream &operator<< (ostream &os, Almacen_Rutas &alm) {
         os << PASSWORD << endl;
         Almacen_Rutas::iterator it;
