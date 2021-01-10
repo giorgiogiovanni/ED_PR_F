@@ -1,3 +1,8 @@
+/**
+ * @file	imagen.h
+ * @author	Dpto. Ciencias de la Computacion e I.A.
+ */
+
 #ifndef __IMAGEN_H
 #define __IMAGEN_H
 #include "imagenES.h"

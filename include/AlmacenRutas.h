@@ -18,7 +18,9 @@
 
 using namespace std;
 
-
+/**
+ * @brief   T.D.A. Almacen de rutas a partir de la clase map de STL
+ */
 class Almacen_Rutas {
     private:
         /// Dato miembro @p rutas con una map STL de RutaAerea
