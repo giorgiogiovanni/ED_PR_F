@@ -43,7 +43,7 @@ Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
     ```
     make exe
     ```
-    _Esta rutina ejecutará el programa con una serie de archivos previamente seleccionados_
+    > _Esta rutina ejecutará el programa con una serie de archivos previamente seleccionados_
 
 ### Diario:
 
@@ -59,5 +59,3 @@ Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
 8.  Corrección Documentacion final _Rafael_
 9.  Complementar **Makefile** _Jorge_
 10. Revision README.md (github sintaxis) y README.txt (explicativo) _Jorge_
-
-
