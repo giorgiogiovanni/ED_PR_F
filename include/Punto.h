@@ -2,7 +2,7 @@
  * @file    Punto.h
  * @brief   Cabeceras e Implementacion de la clase Punto Esferico (Latitud, Longitud)
  * @date    Dic-2020
- * @author  JorgeBG
+ * @author  JorgeBG & RafaelCE
  */
 
 #ifndef __PUNTO_E__
