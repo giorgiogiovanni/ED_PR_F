@@ -11,7 +11,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include <vector>
+#include <list>
 #include <unistd.h>
 #include "Punto.h"
 
@@ -25,7 +25,7 @@ private:
     /// Nombre de la Ruta aerea
     string name;
     /// Lista con los puntos por los que pasa una ruta 
-    vector<PuntoE> ruta;
+    list<PuntoE> ruta;
     
     /**
      * @brief   Metodo privado para borrar datos del objeto
@@ -42,7 +42,7 @@ private:
         Delete();
         this->name = otra.name;
         
-        vector<PuntoE>::const_iterator it;
+        list<PuntoE>::const_iterator it;
         for(it=otra.ruta.begin(); it!=otra.ruta.end(); it++){
             ruta.push_back(*it);
         }
@@ -54,7 +54,7 @@ public:
      */
     RutaAerea() {
         name = "";
-        ruta = vector<PuntoE>();
+        ruta = list<PuntoE>();
     }
 
     /**
@@ -63,16 +63,11 @@ public:
      */
     RutaAerea(const RutaAerea &otra) { Copy(otra); }
 
-    RutaAerea (const string &name, const vector<PuntoE> &vpunt ){
+    RutaAerea (const string &name, const list<PuntoE> &puntos ){
         Delete();
         this->name = name;
-        this->ruta.insert(ruta.begin(),vpunt.begin(),vpunt.end());
+        this->ruta.insert(ruta.begin(),puntos.begin(),puntos.end());
     }
-
-
-/* 
-    ~RutaAerea() { Delete; } 
-*/
 
     /**
      * @brief   Metodo de consulta del tamaño de la RutaAerea
@@ -84,30 +79,14 @@ public:
      * @brief   Consultor del nombre de una RutaAerea
      * @return  un dato @c string con el nombre asignado a la Ruta
      */
-    string getName() {  return name; }
+    string getName() const { return name; }
 
     /**
-     * @brief   Consultor del PuntoE en una posicion (indice) concreto
-     * @param   i   indice a consultar
-     * @return  dato PuntoE en el indice @p i
-     * @pre     0 <= @p i < size()
+     * 
      */
-    PuntoE getPunto( const int &i ) { return ruta.at(i); }
-
-    /**
-     * @brief   Modificador para un punto concreto en la RutaAerea
-     * @param   punto   PuntoE a colocar en dicha posicion
-     * @param   i   indice en el que insertar
-     * @return  @c true si se puede insertar, @c false si no
-     */
-    bool setPunto( const PuntoE &punto, const int i) {
-        bool cond = (i >= 0 && i < size() );
-        if(cond){
-            ruta.at(i).setPunto(punto.getLat(), punto.getLon());
-        }
-        return cond;
+    list<PuntoE> getPuntos() const {
+        return ruta;
     }
-
     /**
      * @brief   Metodo para añadir un punto al final de la ruta
      * @param   p   PuntoE a añadir
@@ -117,11 +96,33 @@ public:
     }
 
     /**
+     * @brief   Sobrecarga de operador ordenacion <. 
+     *          Se considerará menor si su nombre es alfabeticamente anterior
+     * @return  @c true si this.name ( @e lvalue ) es anterior a @e rvalue .name
+     */
+    bool operator<(const RutaAerea &r) const{
+        return (this->name < r.name );
+    }
+
+    /**
+     * @brief   Sobrecarga de orperador ordenacion >
+     *          Se considerará mayor si su nombre es alfabeticamente posterior
+     * @return  @c true si this.name ( @e lvalue ) es posterior a @e rvalue .name
+     */
+    bool operator>(const RutaAerea &r) const {
+        return (this->name > r.name);
+    }
+
+    /**************************************************************************/
+    // CLASES ITERADORAS
+    /**************************************************************************/
+
+    /**
      * Clase Iteradora de RutaAerea
      */
     class iterator {
     private:
-        vector<PuntoE>::iterator it;
+        list<PuntoE>::iterator it;
     public:
         iterator() {};
 
@@ -153,7 +154,7 @@ public:
      */
     class const_iterator {
     private:
-        vector<PuntoE>::const_iterator it;
+        list<PuntoE>::const_iterator it;
          
     public:
         const_iterator() {};

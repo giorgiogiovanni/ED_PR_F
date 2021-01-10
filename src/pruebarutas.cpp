@@ -1,5 +1,5 @@
 #include "Ruta.h"
-#include "almacen_rutas.h"
+#include "AlmacenRutas.h"
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -19,7 +19,7 @@ int main(int argc, char * argv[]){
   f>>A; //leemos las rutas y los puntos de interes
 
   cout << "PRIMERA RUTA:" << endl;
-  cout << *A.begin() << endl << endl;
+  cout << (*A.begin()).second << endl << endl;
 
   cout << "LEIDAS las rutas del archivo: " << endl;
   cout << A << endl << endl;
