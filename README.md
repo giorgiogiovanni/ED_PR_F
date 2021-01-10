@@ -47,17 +47,17 @@ Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
 
 ### Diario:
 
-    0.  Primer análisis y diseño de la practica _Jorge y Rafael_
-    1.  Implementacion de **Punto.h** _Jorge_
-    2.  Primera implementacion de **Ruta.h** _Rafael_
-    3.  Creación **pruebaruta.cpp** _Rafael_ para probar la lectura
-    4.  Primera implementacion de **AlmacenRutas.h** _Jorge_
-    5.  Creación **pruebarutas.cpp** _Jorge_ para probar la lectura
-    6.  Rectificacion de implmentaciones **Ruta.h** y **AlmacenRutas.h** _Jorge y Rafael_
-            _Aquí se rectificaron los tipos de la STL utilizados internamente en los TDA según comentamos por correo_
-    7.  Revisión de **rutas_aereas.cpp** _Rafael_ para uso con nuestros espacios de nombres de los TDAs
-    8.  Corrección Documentacion final _Rafael_
-    9.  Complementar **Makefile** _Jorge_
-    10. Revision README.md (github sintaxis) y README.txt (explicativo) _Jorge_
+0.  Primer análisis y diseño de la practica _Jorge y Rafael_
+1.  Implementacion de **Punto.h** _Jorge_
+2.  Primera implementacion de **Ruta.h** _Rafael_
+3.  Creación **pruebaruta.cpp** _Rafael_ para probar la lectura
+4.  Primera implementacion de **AlmacenRutas.h** _Jorge_
+5.  Creación **pruebarutas.cpp** _Jorge_ para probar la lectura
+6.  Rectificacion de implmentaciones **Ruta.h** y **AlmacenRutas.h** _Jorge y Rafael_
+    > _Aquí se rectificaron los tipos de la STL utilizados internamente en los TDA según comentamos por correo_
+7.  Revisión de **rutas_aereas.cpp** _Rafael_ para uso con nuestros espacios de nombres de los TDAs
+8.  Corrección Documentacion final _Rafael_
+9.  Complementar **Makefile** _Jorge_
+10. Revision README.md (github sintaxis) y README.txt (explicativo) _Jorge_
 
 
