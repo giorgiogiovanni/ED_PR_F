@@ -32,14 +32,17 @@ Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
     ejectuar:   ./bin/rutas_aereas <... parametros ...>
         
         PARAMETROS:
-         1. Fichero con la informacion de los paises
+        1. Fichero con la informacion de los paises
          2. Nombre de la imagen con el mapa del mundo
          3. Directorio con las banderas
          4. Fichero con el almacen de rutas
          5. Nombre de la imagen con el avion
          6. Nombre de la imagen de la mascara del avion
+    
     Existe tambien una rutina preparada:
+    ```
     make exe
+    ```
     _Esta rutina ejecutará el programa con una serie de archivos previamente seleccionados_
 
 ### Diario:
