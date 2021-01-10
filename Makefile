@@ -18,7 +18,8 @@ rutas:
 # *********** Compresion del proyecto *******************
 zip:	mrproper
 	zip -r rutas_aereas.zip *
-	zip -d rutas_aereas.zip "datos/*" "datos"
+	# comentado para preservar archivos propios de e/s
+	# zip -d rutas_aereas.zip "datos/*" "datos"
 
 tgz:	mrproper
 	tar zcv rutas_aereas.tgz *
