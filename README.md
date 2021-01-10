@@ -12,19 +12,26 @@ para ello también existen los archivos ruta1.txt (consiste en una unica ruta pa
 y el archivo almacen_rutas.txt (para leer una serie de rutas y crear la instancia de la clase)
 
  * _PRUEBA RUTA_
+    ```
     make pruebaruta
+    ```
     ejecutar:   ./bin/pruebaruta datos/ruta1.txt
 
  * _RUTAS_
+    ```
     make rutas
+    ```
     ejecutar:  ./bin/rutas datos/almacen_rutas.txt 
 
 Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
 
  * _RUTAS AEREAS_ FINAL
+    ```
     make rutas_aereas
+    ```
     ejectuar:   ./bin/rutas_aereas <... parametros ...>
-    
+        
+        PARAMETROS:
          1. Fichero con la informacion de los paises
          2. Nombre de la imagen con el mapa del mundo
          3. Directorio con las banderas
