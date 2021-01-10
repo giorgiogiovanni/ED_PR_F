@@ -22,7 +22,7 @@ zip:	mrproper
 	# zip -d rutas_aereas.zip "datos/*" "datos"
 
 tgz:	mrproper
-	tar zcv rutas_aereas.tgz *
+	tar zcv -f rutas_aereas.tgz *
 
 
 # *********** Ejecución del programa ********************

@@ -1,5 +1,8 @@
 PRACTICA FINAL ESTRUCTURA DE DATOS
 
+El proyecto completo está almacenado en github
+https://github.com/giorgiogiovanni/ED_PR_F
+
 
 Autores:
 -------------------------------------------------
