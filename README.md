@@ -6,3 +6,7 @@
 
 _Proyecto final para asignatura de E.D.2020-2021_
 
+### Uso del proyecto:
+ * para el uso del proyecto General
+
+### Diario:

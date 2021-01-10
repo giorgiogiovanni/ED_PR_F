@@ -6,7 +6,6 @@ CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c
 
 	
-
 rutas_aereas:
 	g++ -g -o bin/rutasaereas -I./$(INC) $(SRC)/rutas_aereas.cpp $(SRC)/imagen.cpp $(SRC)/imagenES.cpp
 
@@ -15,6 +14,14 @@ pruebaruta:
 
 rutas:
 	g++ -g -o bin/rutas -I./$(INC) src/pruebarutas.cpp
+
+# *********** Compresion del proyecto *******************
+zip:	mrproper
+	zip -r rutas_aereas.zip *
+	zip -d rutas_aereas.zip "datos/*" "datos"
+
+tgz:	mrproper
+	tar zcv rutas_aereas.tgz *
 
 
 # *********** Ejecución del programa ********************
@@ -30,6 +37,7 @@ documentacion:
 # ************ Limpieza ************
 clean :
 	-rm $(OBJ)/* $(SRC)/*~ $(INC)/*~ ./*~
+	-rm *.pgm *.ppm *.zip *.tgz
 
 mrproper : clean
 	-rm $(BIN)/* doc/html/*
