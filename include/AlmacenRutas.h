@@ -2,7 +2,7 @@
  * @file    AlmacenRutas.h
  * @brief   Cabeceras e Implementacion de la clase Almacen de Rutas
  * @date    Dic-2020
- * @author  JorgeBG
+ * @author  JorgeBG & RafaelCE
  */
 
 

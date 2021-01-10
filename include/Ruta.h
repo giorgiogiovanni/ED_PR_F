@@ -2,7 +2,7 @@
  * @file    Ruta.h
  * @brief   Cabeceras e Implementacion de la clase RutaAerea
  * @date    Dic-2020
- * @author  JorgeBG
+ * @author  JorgeBG & RafaelCE
  */
 
 #ifndef __RUTA_AEREA__
