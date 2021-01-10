@@ -42,6 +42,7 @@ Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
     make exe
     Esta rutina ejecutará el programa con una serie de archivos previamente seleccionados
 
+
 DIARIO:
 -------------------------------------------------
 
@@ -64,3 +65,34 @@ DIARIO:
 9.  Complementar Makefile                       Jorge
 10. Revision README.md (github sintaxis)        Jorge
         y README.txt (explicativo)
+
+
+FASES Y ERRORES
+-------------------------------------------------
+
+- Originalmente diseñamos los TDAs de manera que Ruta consistía en un STL vector y Almacen_Rutas en un
+STL list con las rutas almacenadas en su interior. Posteriormente entendimos que Almacen_Rutas debía, por
+cuestiones de eficiencia en la busqueda, estar construido mediante un tipo map. De igual manera, Ruta podía
+consistir internamente en un list de Punto, y un nombre asociado a la ruta. Este nombre se repetiría en el 
+map como clave debido al doble encapsulamiento
+
+- En la utilización de las clases suministradas, los metodos de lectura de la clase Paises daban error.
+En algun caso leia la siguiente linea, al estar implementado como lo estaba mantenia el nombre (Zimbaue) pero 
+el valor almacenado era incorrecto.
+Para solucionarlo intentamos crear un filtro con un if(is.peek() != EOF) pero si la siguiente linea era vacía 
+no conseguiamos que una correcta lectura. Finalmente obligamos en la lectura de Pais.h que cada pais leido
+comprobase si tanto los datos locales "pais" como "bandera" eran != "", de manera que si había obtenido una
+lectura vacía (linea en blanco) no creaba la instancia pais. De esta manera conseguimos arreglar ese pequeño
+problema en la lectura del archivo.
+
+- En la lectura de puntos incluimos una comprobacion obligando a que el formato sea: "(lat, lon)",
+esta comprobacion es alterable para que no comprometa la lectura si fuese necesario.
+
+- Por suerte, las implmentaciones de las clases iteradoras no supusieron ningun problema y a priori parecen
+correctas. En rutas_aereas.cpp se utiliza la clase iteradora de Ruta_Aerea y funciona correctamente.
+
+- Algunos nombres tanto de las clases como de metodos fueron elegidos durante la implementacion, adaptando o 
+alterando algunos de los archivos de referencia para adaptarlos al estandar camelCase. De igual forma, la clase 
+Punto se denomina PuntoE, simplemente por tratarse de un punto geografico (Esferico), con los datos miembros 
+con nombres latitud y longitud, y el metodo incluido para comprobar la validez de los valores leidos. No le 
+encontrabamos sentido a llamarlo genericamente Punto. 
