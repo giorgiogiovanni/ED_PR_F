@@ -24,6 +24,7 @@ Finalmente el proyecto definitivo se realiza mediante la rutina [ rutas_aereas ]
  * _RUTAS AEREAS_ FINAL
     make rutas_aereas
     ejectuar:   ./bin/rutas_aereas <... parametros ...>
+    
          1. Fichero con la informacion de los paises
          2. Nombre de la imagen con el mapa del mundo
          3. Directorio con las banderas
